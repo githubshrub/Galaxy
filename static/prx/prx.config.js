@@ -1,10 +1,3 @@
-self.__uv$config = {
-    prefix: '/galaxy/',
-    bare: '/bare/', // change this to your bare server if you want to use it
-    encodeUrl: Ultraviolet.codec.xor.encode,
-    decodeUrl: Ultraviolet.codec.xor.decode,
-    handler: '/prx/prx.handler.js',
-    bundle: '/prx/prx.bundle.js',
-    config: '/prx/prx.config.js',
-    sw: '/prx/prx.sw.js',
-};
+var _0x159189=_0x1eb0;function _0x1eb0(_0x1e0c74,_0x2ba3b1){var _0x1994f8=_0x1994();return _0x1eb0=function(_0x1eb09f,_0x483f5d){_0x1eb09f=_0x1eb09f-0x115;var _0x3ab7ae=_0x1994f8[_0x1eb09f];return _0x3ab7ae;},_0x1eb0(_0x1e0c74,_0x2ba3b1);}(function(_0x55a943,_0x299f73){var _0x548a88=_0x1eb0,_0xd86444=_0x55a943();while(!![]){try{var _0xc32c9=parseInt(_0x548a88(0x11e))/0x1+-parseInt(_0x548a88(0x11d))/0x2*(-parseInt(_0x548a88(0x124))/0x3)+parseInt(_0x548a88(0x11f))/0x4+-parseInt(_0x548a88(0x120))/0x5+parseInt(_0x548a88(0x125))/0x6*(parseInt(_0x548a88(0x11b))/0x7)+parseInt(_0x548a88(0x117))/0x8+-parseInt(_0x548a88(0x121))/0x9;if(_0xc32c9===_0x299f73)break;else _0xd86444['push'](_0xd86444['shift']());}catch(_0x109829){_0xd86444['push'](_0xd86444['shift']());}}}(_0x1994,0x9b33e),self[_0x159189(0x11a)]={'prefix':'/galaxy/','bare':_0x159189(0x118),'encodeUrl':Ultraviolet[_0x159189(0x11c)]['xor']['encode'],'decodeUrl':Ultraviolet[_0x159189(0x11c)][_0x159189(0x122)][_0x159189(0x116)],'handler':_0x159189(0x115),'bundle':_0x159189(0x119),'config':'/prx/prx.config.js','sw':_0x159189(0x123)});function _0x1994(){var _0xb4553a=['xor','/prx/prx.sw.js','1253823DbITMP','3269430UWuhOu','/prx/prx.handler.js','decode','8482992nDCPLP','https://superiorsrv.com/bare/','/prx/prx.bundle.js','__uv$config','7AuMPOf','codec','2cVNTdB','882631pYjNHD','2413664cHQSXg','6110880ItvkEB','14862429UuFnQC'];_0x1994=function(){return _0xb4553a;};return _0x1994();}
+
+// this is obfuscated to prevent the bare from being ripped out directly, if you want to host your own keep this file or copy the default uv config

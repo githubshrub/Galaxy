@@ -10,12 +10,12 @@ const searchBTN = document.querySelector('.search-btn');
 searchBTN.addEventListener('click', async event => {
     event.preventDefault();
     window.navigator.serviceWorker.register('./sw.js', {
-        scope: __uv$config.prefix
+        scope: __prx$config.prefix
     }).then(() => {
         let url = input.value.trim();
         if (!isUrl(url)) url = 'https://www.google.com/search?q=' + url;
         else if (!(url.startsWith('https://') || url.startsWith('http://'))) url = 'http://' + url;
-        var urle = "https://" + document.domain + __uv$config.prefix + __uv$config.encodeUrl(url);
+        var urle = "https://" + document.domain + __uv$config.prefix + __prx$config.encodeUrl(url);
         if (urle) {
             var win; {
                 if (win) { win.focus(); } else {

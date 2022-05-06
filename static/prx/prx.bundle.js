@@ -36479,7 +36479,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-class UVClient extends _events_js__WEBPACK_IMPORTED_MODULE_16__["default"] {
+class prxClient extends _events_js__WEBPACK_IMPORTED_MODULE_16__["default"] {
     constructor(window = self, worker = !window.window) {
         super();
         this.window = window;
@@ -36567,8 +36567,8 @@ class UVClient extends _events_js__WEBPACK_IMPORTED_MODULE_16__["default"] {
     };
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (UVClient);
-if (typeof self === 'object') self.UVClient = UVClient;
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (prxClient);
+if (typeof self === 'object') self.prxClient = prxClient;
 
 /***/ }),
 /* 154 */
@@ -38404,7 +38404,7 @@ class LocationApi extends _events_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
     };
     overrideWorkerLocation(parse) {
         if (!this.WorkerLocation) return false;
-        const uv = this;
+        const prx = this;
         
         for (const key of this.keys) {
             this.ctx.overrideDescriptor(this.workerLocProto, key, {
@@ -39173,7 +39173,7 @@ class Ultraviolet {
             isSrcset: _rewrite_html_js__WEBPACK_IMPORTED_MODULE_7__.isSrcset,
             isStyle: _rewrite_html_js__WEBPACK_IMPORTED_MODULE_7__.isStyle,
         };
-        if (!this.vanilla) this.implementUVMiddleware();
+        if (!this.vanilla) this.implementprxMiddleware();
         this.cookie = {
             validateCookie: _cookie_js__WEBPACK_IMPORTED_MODULE_6__.validateCookie,
             db: () => {
@@ -39255,7 +39255,7 @@ class Ultraviolet {
     
         return result;
     }
-    implementUVMiddleware() {
+    implementprxMiddleware() {
         // HTML
         (0,_rewrite_html_js__WEBPACK_IMPORTED_MODULE_7__.attributes)(this);
         (0,_rewrite_html_js__WEBPACK_IMPORTED_MODULE_7__.text)(this);

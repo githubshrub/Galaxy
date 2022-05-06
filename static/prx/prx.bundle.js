@@ -35765,12 +35765,12 @@ function createInjection(handler = '/prx.handler.js', bundle = '/prx.bundle.js',
             childNodes: [
                 {
                     nodeName: '#text',
-                    value: `window.__uv$cookies = atob("${btoa(cookies)}");\nwindow.__uv$referrer = atob("${btoa(referrer)}");`
+                    value: `window.__prx$cookies = atob("${btoa(cookies)}");\nwindow.__prx$referrer = atob("${btoa(referrer)}");`
                 },
             ],
             attrs: [
                 {
-                    name: '__uv-script',
+                    name: '__prx-script',
                     value: '1',
                     skip: true,
                 }
@@ -35784,7 +35784,7 @@ function createInjection(handler = '/prx.handler.js', bundle = '/prx.bundle.js',
             attrs: [
                 { name: 'src', value: bundle, skip: true },
                 {
-                    name: '__uv-script',
+                    name: '__prx-script',
                     value: '1',
                     skip: true,
                 }
@@ -35797,7 +35797,7 @@ function createInjection(handler = '/prx.handler.js', bundle = '/prx.bundle.js',
             attrs: [
                 { name: 'src', value: config, skip: true },
                 {
-                    name: '__uv-script',
+                    name: '__prx-script',
                     value: '1',
                     skip: true,
                 }
@@ -35810,7 +35810,7 @@ function createInjection(handler = '/prx.handler.js', bundle = '/prx.bundle.js',
             attrs: [
                 { name: 'src', value: handler, skip: true },
                 {
-                    name: '__uv-script',
+                    name: '__prx-script',
                     value: '1',
                     skip: true,
                 }
@@ -35893,7 +35893,7 @@ function property(ctx) {
 
         if (type === 'rewrite' && computedProperty(node)) {
             data.changes.push({
-                node: '__uv.$wrap((',
+                node: '__prx.$wrap((',
                 start: node.property.start,
                 end: node.property.start,
             })
@@ -35907,28 +35907,28 @@ function property(ctx) {
     
         };
     
-        if (!node.computed && node.property.name === 'location' && type === 'rewrite' || node.property.name === '__uv$location' && type === 'source') {
+        if (!node.computed && node.property.name === 'location' && type === 'rewrite' || node.property.name === '__prx$location' && type === 'source') {
             data.changes.push({
                 start: node.property.start,
                 end: node.property.end,
-                node: type === 'rewrite' ? '__uv$setSource(__uv).__uv$location' : 'location'
+                node: type === 'rewrite' ? '__prx$setSource(__prx).__prx$location' : 'location'
             });
         };
 
 
-        if (!node.computed && node.property.name === 'top' && type === 'rewrite' || node.property.name === '__uv$top' && type === 'source') {
+        if (!node.computed && node.property.name === 'top' && type === 'rewrite' || node.property.name === '__prx$top' && type === 'source') {
             data.changes.push({
                 start: node.property.start,
                 end: node.property.end,
-                node: type === 'rewrite' ? '__uv$setSource(__uv).__uv$top' : 'top'
+                node: type === 'rewrite' ? '__prx$setSource(__prx).__prx$top' : 'top'
             });
         };
 
-        if (!node.computed && node.property.name === 'parent' && type === 'rewrite' || node.property.name === '__uv$parent' && type === 'source') {
+        if (!node.computed && node.property.name === 'parent' && type === 'rewrite' || node.property.name === '__prx$parent' && type === 'source') {
             data.changes.push({
                 start: node.property.start,
                 end: node.property.end,
-                node: type === 'rewrite' ? '__uv$setSource(__uv).__uv$parent' : 'parent'
+                node: type === 'rewrite' ? '__prx$setSource(__prx).__prx$parent' : 'parent'
             });
         };
 
@@ -35937,20 +35937,20 @@ function property(ctx) {
             data.changes.push({
                 start: node.property.start,
                 end: node.property.end,
-                node:'__uv$setSource(__uv).postMessage',
+                node:'__prx$setSource(__prx).postMessage',
             });
         };
 
 
-        if (!node.computed && node.property.name === 'eval' && type === 'rewrite' || node.property.name === '__uv$eval' && type === 'source') {
+        if (!node.computed && node.property.name === 'eval' && type === 'rewrite' || node.property.name === '__prx$eval' && type === 'source') {
             data.changes.push({
                 start: node.property.start,
                 end: node.property.end,
-                node: type === 'rewrite' ? '__uv$setSource(__uv).__uv$eval' : 'eval'
+                node: type === 'rewrite' ? '__prx$setSource(__prx).__prx$eval' : 'eval'
             });
         };
 
-        if (!node.computed && node.property.name === '__uv$setSource' && type === 'source' && node.parent.type === esotope_hammerhead__WEBPACK_IMPORTED_MODULE_0__.Syntax.CallExpression) {
+        if (!node.computed && node.property.name === '__prx$setSource' && type === 'source' && node.parent.type === esotope_hammerhead__WEBPACK_IMPORTED_MODULE_0__.Syntax.CallExpression) {
             const { parent, property } = node; 
             data.changes.push({
                 start: property.start - 1,
@@ -35991,7 +35991,7 @@ function identifier(ctx) {
         data.changes.push({
             start: node.start,
             end: node.end,
-            node: '__uv.$get(' + node.name + ')'
+            node: '__prx.$get(' + node.name + ')'
         });
     });
 };
@@ -36007,7 +36007,7 @@ function wrapEval(ctx) {
         const [ script ] = node.arguments;
     
         data.changes.push({
-            node: '__uv.js.rewrite(',
+            node: '__prx.js.rewrite(',
             start: script.start,
             end: script.start,
         })
@@ -36040,7 +36040,7 @@ function dynamicImport(ctx) {
     js.on(esotope_hammerhead__WEBPACK_IMPORTED_MODULE_0__.Syntax.ImportExpression, (node, data, type) => {
         if (type !== 'rewrite') return false;
         data.changes.push({
-            node: '__uv.rewriteUrl(',
+            node: '__prx.rewriteUrl(',
             start: node.source.start,
             end: node.source.start,
         })
@@ -36113,7 +36113,7 @@ function unwrap(ctx) {
 function isWrapped(node) {
     if (node.type !== esotope_hammerhead__WEBPACK_IMPORTED_MODULE_0__.Syntax.MemberExpression) return false;
     if (node.property.name === 'rewrite' && isWrapped(node.object)) return true;
-    if (node.object.type !== esotope_hammerhead__WEBPACK_IMPORTED_MODULE_0__.Syntax.Identifier || node.object.name !== '__uv') return false;
+    if (node.object.type !== esotope_hammerhead__WEBPACK_IMPORTED_MODULE_0__.Syntax.Identifier || node.object.name !== '__prx') return false;
     if (!['js', '$get', '$wrap', 'rewriteUrl'].includes(node.property.name)) return false;
     return true;
 };
@@ -38410,7 +38410,7 @@ class LocationApi extends _events_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
             this.ctx.overrideDescriptor(this.workerLocProto, key, {
                 get: (target, that) => {
                     return parse(
-                        uv.href.get.call(this.location)
+                        prx.href.get.call(this.location)
                     )[key]
                 },
             });
@@ -39150,9 +39150,9 @@ class Ultraviolet {
         this.meta = options.meta || {};
         this.meta.base ||= undefined;
         this.meta.origin ||= '';
-        this.bundleScript = options.bundle || '/uv.bundle.js';
-        this.handlerScript = options.handler || '/uv.handler.js';
-        this.configScript = options.config || '/uv.config.js';
+        this.bundleScript = options.bundle || '/prx.bundle.js';
+        this.handlerScript = options.handler || '/prx.handler.js';
+        this.configScript = options.config || '/prx.config.js';
         this.meta.url ||= this.meta.base || '';
         this.codec = Ultraviolet.codec;
         this.html = new _html_js__WEBPACK_IMPORTED_MODULE_0__["default"](this);
@@ -39162,9 +39162,9 @@ class Ultraviolet {
         this.openDB = this.constructor.openDB;
         this.Bowser = this.constructor.Bowser;
         this.client = typeof self !== 'undefined' ? new _client_index_js__WEBPACK_IMPORTED_MODULE_12__["default"]((options.window || self)) : null;
-        this.master = '__uv';
-        this.dataPrefix = '__uv$';
-        this.attributePrefix = '__uv';
+        this.master = '__prx';
+        this.dataPrefix = '__prx$';
+        this.attributePrefix = '__prx';
         this.createHtmlInject = _rewrite_html_js__WEBPACK_IMPORTED_MODULE_7__.createInjection;
         this.attrs = {
             isUrl: _rewrite_html_js__WEBPACK_IMPORTED_MODULE_7__.isUrl,

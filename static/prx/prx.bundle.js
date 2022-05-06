@@ -35757,7 +35757,7 @@ function injectHead(ctx) {
     });
 };
 
-function createInjection(handler = '/uv.handler.js', bundle = '/uv.bundle.js', config = '/uv.config.js', cookies = '', referrer = '') {
+function createInjection(handler = '/prx.handler.js', bundle = '/prx.bundle.js', config = '/prx.config.js', cookies = '', referrer = '') {
     return [
         {
             tagName: 'script',

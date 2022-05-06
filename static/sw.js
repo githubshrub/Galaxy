@@ -1,6 +1,6 @@
 importScripts('./prx/prx.sw.js');
 
-const sw = new UVServiceWorker();
+const sw = new PRXServiceWorker();
 
 self.addEventListener('fetch', event =>
     event.respondWith(

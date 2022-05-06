@@ -1,6 +1,6 @@
 self.__prx$config = {
     prefix: '/service/',
-    bare: '/bare/',
+    bare: 'https://incog.dev/bare/',
     encodeUrl: Ultraviolet.codec.xor.encode,
     decodeUrl: Ultraviolet.codec.xor.decode,
     handler: '/prx.handler.js',
@@ -8,3 +8,5 @@ self.__prx$config = {
     config: '/prx.config.js',
     sw: '/prx.sw.js',
 };
+
+// will be replaced to our own bare later, just our current vps got sinkholed

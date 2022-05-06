@@ -1,8 +1,8 @@
 self.__prx$config = {
     prefix: '/service/',
     bare: 'https://incog.dev/bare/',
-    encodeUrl: Ultraviolet.codec.xor.encode,
-    decodeUrl: Ultraviolet.codec.xor.decode,
+    encodeUrl: prx.codec.xor.encode,
+    decodeUrl: prx.codec.xor.decode,
     handler: '/prx.handler.js',
     bundle: '/prx.bundle.js',
     config: '/prx.config.js',
